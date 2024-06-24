@@ -1,15 +1,245 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-welcome />
+    <div class="content flex-row-fluid" id="kt_content">
+        <!--begin::Row-->
+        <div class="row gy-5 g-xl-10">
+            <!--begin::Col-->
+            <div class="col-sm-6 col-xl-2 mb-xl-10">
+                <!--begin::Card widget 2-->
+                <div class="card h-lg-100">
+                    <!--begin::Body-->
+                    <div class="card-body d-flex justify-content-between align-items-start flex-column">
+                        <!--begin::Icon-->
+                        <div class="m-0">
+                            <i class="ki-duotone ki-compass fs-2hx text-gray-600">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                            </i>
+                        </div>
+                        <!--end::Icon-->
+                        <!--begin::Section-->
+                        <div class="d-flex flex-column my-7">
+                            <!--begin::Number-->
+                            <span class="fw-semibold fs-3x text-gray-800 lh-1 ls-n2">327</span>
+                            <!--end::Number-->
+                            <!--begin::Follower-->
+                            <div class="m-0">
+                                <span class="fw-semibold fs-6 text-gray-500">Projects</span>
+                            </div>
+                            <!--end::Follower-->
+                        </div>
+                        <!--end::Section-->
+                        <!--begin::Badge-->
+                        <span class="badge badge-light-success fs-base">
+                        <i class="ki-duotone ki-arrow-up fs-5 text-success ms-n1">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                        </i>2.1%</span>
+                        <!--end::Badge-->
+                    </div>
+                    <!--end::Body-->
+                </div>
+                <!--end::Card widget 2-->
             </div>
+            <!--end::Col-->
+            <!--begin::Col-->
+            <div class="col-sm-6 col-xl-2 mb-xl-10">
+                <!--begin::Card widget 2-->
+                <div class="card h-lg-100">
+                    <!--begin::Body-->
+                    <div class="card-body d-flex justify-content-between align-items-start flex-column">
+                        <!--begin::Icon-->
+                        <div class="m-0">
+                            <i class="ki-duotone ki-chart-simple fs-2hx text-gray-600">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                                <span class="path3"></span>
+                                <span class="path4"></span>
+                            </i>
+                        </div>
+                        <!--end::Icon-->
+                        <!--begin::Section-->
+                        <div class="d-flex flex-column my-7">
+                            <!--begin::Number-->
+                            <span class="fw-semibold fs-3x text-gray-800 lh-1 ls-n2">27,5M</span>
+                            <!--end::Number-->
+                            <!--begin::Follower-->
+                            <div class="m-0">
+                                <span class="fw-semibold fs-6 text-gray-500">Stock Qty</span>
+                            </div>
+                            <!--end::Follower-->
+                        </div>
+                        <!--end::Section-->
+                        <!--begin::Badge-->
+                        <span class="badge badge-light-success fs-base">
+                        <i class="ki-duotone ki-arrow-up fs-5 text-success ms-n1">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                        </i>2.1%</span>
+                        <!--end::Badge-->
+                    </div>
+                    <!--end::Body-->
+                </div>
+                <!--end::Card widget 2-->
+            </div>
+            <!--end::Col-->
+            <!--begin::Col-->
+            <div class="col-sm-6 col-xl-2 mb-xl-10">
+                <!--begin::Card widget 2-->
+                <div class="card h-lg-100">
+                    <!--begin::Body-->
+                    <div class="card-body d-flex justify-content-between align-items-start flex-column">
+                        <!--begin::Icon-->
+                        <div class="m-0">
+                            <i class="ki-duotone ki-abstract-39 fs-2hx text-gray-600">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                            </i>
+                        </div>
+                        <!--end::Icon-->
+                        <!--begin::Section-->
+                        <div class="d-flex flex-column my-7">
+                            <!--begin::Number-->
+                            <span class="fw-semibold fs-3x text-gray-800 lh-1 ls-n2">149M</span>
+                            <!--end::Number-->
+                            <!--begin::Follower-->
+                            <div class="m-0">
+                                <span class="fw-semibold fs-6 text-gray-500">Stock Value</span>
+                            </div>
+                            <!--end::Follower-->
+                        </div>
+                        <!--end::Section-->
+                        <!--begin::Badge-->
+                        <span class="badge badge-light-danger fs-base">
+                        <i class="ki-duotone ki-arrow-down fs-5 text-danger ms-n1">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                        </i>0.47%</span>
+                        <!--end::Badge-->
+                    </div>
+                    <!--end::Body-->
+                </div>
+                <!--end::Card widget 2-->
+            </div>
+            <!--end::Col-->
+            <!--begin::Col-->
+            <div class="col-sm-6 col-xl-2 mb-xl-10">
+                <!--begin::Card widget 2-->
+                <div class="card h-lg-100">
+                    <!--begin::Body-->
+                    <div class="card-body d-flex justify-content-between align-items-start flex-column">
+                        <!--begin::Icon-->
+                        <div class="m-0">
+                            <i class="ki-duotone ki-map fs-2hx text-gray-600">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                                <span class="path3"></span>
+                            </i>
+                        </div>
+                        <!--end::Icon-->
+                        <!--begin::Section-->
+                        <div class="d-flex flex-column my-7">
+                            <!--begin::Number-->
+                            <span class="fw-semibold fs-3x text-gray-800 lh-1 ls-n2">89M</span>
+                            <!--end::Number-->
+                            <!--begin::Follower-->
+                            <div class="m-0">
+                                <span class="fw-semibold fs-6 text-gray-500">C APEX</span>
+                            </div>
+                            <!--end::Follower-->
+                        </div>
+                        <!--end::Section-->
+                        <!--begin::Badge-->
+                        <span class="badge badge-light-success fs-base">
+                        <i class="ki-duotone ki-arrow-up fs-5 text-success ms-n1">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                        </i>2.1%</span>
+                        <!--end::Badge-->
+                    </div>
+                    <!--end::Body-->
+                </div>
+                <!--end::Card widget 2-->
+            </div>
+            <!--end::Col-->
+            <!--begin::Col-->
+            <div class="col-sm-6 col-xl-2 mb-5 mb-xl-10">
+                <!--begin::Card widget 2-->
+                <div class="card h-lg-100">
+                    <!--begin::Body-->
+                    <div class="card-body d-flex justify-content-between align-items-start flex-column">
+                        <!--begin::Icon-->
+                        <div class="m-0">
+                            <i class="ki-duotone ki-abstract-35 fs-2hx text-gray-600">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                            </i>
+                        </div>
+                        <!--end::Icon-->
+                        <!--begin::Section-->
+                        <div class="d-flex flex-column my-7">
+                            <!--begin::Number-->
+                            <span class="fw-semibold fs-3x text-gray-800 lh-1 ls-n2">72.4%</span>
+                            <!--end::Number-->
+                            <!--begin::Follower-->
+                            <div class="m-0">
+                                <span class="fw-semibold fs-6 text-gray-500">OPEX</span>
+                            </div>
+                            <!--end::Follower-->
+                        </div>
+                        <!--end::Section-->
+                        <!--begin::Badge-->
+                        <span class="badge badge-light-danger fs-base">
+                        <i class="ki-duotone ki-arrow-down fs-5 text-danger ms-n1">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                        </i>0.647%</span>
+                        <!--end::Badge-->
+                    </div>
+                    <!--end::Body-->
+                </div>
+                <!--end::Card widget 2-->
+            </div>
+            <!--end::Col-->
+            <!--begin::Col-->
+            <div class="col-sm-6 col-xl-2 mb-5 mb-xl-10">
+                <!--begin::Card widget 2-->
+                <div class="card h-lg-100">
+                    <!--begin::Body-->
+                    <div class="card-body d-flex justify-content-between align-items-start flex-column">
+                        <!--begin::Icon-->
+                        <div class="m-0">
+                            <i class="ki-duotone ki-abstract-26 fs-2hx text-gray-600">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                            </i>
+                        </div>
+                        <!--end::Icon-->
+                        <!--begin::Section-->
+                        <div class="d-flex flex-column my-7">
+                            <!--begin::Number-->
+                            <span class="fw-semibold fs-3x text-gray-800 lh-1 ls-n2">106M</span>
+                            <!--end::Number-->
+                            <!--begin::Follower-->
+                            <div class="m-0">
+                                <span class="fw-semibold fs-6 text-gray-500">Saving</span>
+                            </div>
+                            <!--end::Follower-->
+                        </div>
+                        <!--end::Section-->
+                        <!--begin::Badge-->
+                        <span class="badge badge-light-success fs-base">
+                        <i class="ki-duotone ki-arrow-up fs-5 text-success ms-n1">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                        </i>2.1%</span>
+                        <!--end::Badge-->
+                    </div>
+                    <!--end::Body-->
+                </div>
+                <!--end::Card widget 2-->
+            </div>
+            <!--end::Col-->
         </div>
+        <!--end::Row-->
     </div>
 </x-app-layout>
