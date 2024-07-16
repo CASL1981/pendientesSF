@@ -9,19 +9,6 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-		<meta charset="utf-8" />
-		<meta name="description" content="The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free." />
-		<meta name="keywords" content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta property="og:locale" content="en_US" />
-		<meta property="og:type" content="article" />
-		<meta property="og:title" content="Metronic - The World's #1 Selling Bootstrap Admin Template by KeenThemes" />
-		<meta property="og:url" content="https://keenthemes.com/metronic" />
-		<meta property="og:site_name" content="Metronic by Keenthemes" />
-		<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-
-
-
 		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
 		<!--begin::Fonts(mandatory for all pages)-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
@@ -60,171 +47,7 @@
 							<!--begin::Menu-->
 							<div class="menu menu-column menu-sub-indention menu-active-bg menu-state-primary menu-title-gray-700 fs-6 menu-rounded w-100 fw-semibold" id="#kt_aside_menu" data-kt-menu="true">
 
-                                <!--begin:Menu item-->
-								<div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
-									<!--begin:Menu link-->
-									<span class="menu-link">
-										<span class="menu-icon">
-											<i class="ki-duotone ki-element-11 fs-2">
-												<span class="path1"></span>
-												<span class="path2"></span>
-												<span class="path3"></span>
-												<span class="path4"></span>
-											</i>
-										</span>
-										<span class="menu-title">Dashboards</span>
-										<span class="menu-arrow"></span>
-									</span>
-									<!--end:Menu link-->
-									<!--begin:Menu sub-->
-									<div class="menu-sub menu-sub-accordion">
-										<!--begin:Menu item-->
-										<div class="menu-item">
-											<!--begin:Menu link-->
-											<a class="menu-link active" href="{{ route('dashboard') }}">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Default</span>
-											</a>
-											<!--end:Menu link-->
-										</div>
-										<!--end:Menu item-->
-										<!--begin:Menu item-->
-										<div class="menu-item">
-											<!--begin:Menu link-->
-											<a class="menu-link" href="dashboards/ecommerce.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">eCommerce</span>
-											</a>
-											<!--end:Menu link-->
-										</div>
-										<!--end:Menu item-->
-									</div>
-									<!--end:Menu sub-->
-								</div>
-								<!--end:Menu item-->
-
-
-
-
-								<!--begin:Menu item-->
-								<div class="menu-item pt-5">
-									<!--begin:Menu content-->
-									<div class="menu-content">
-										<span class="menu-heading fw-bold text-uppercase fs-7">Pages</span>
-									</div>
-									<!--end:Menu content-->
-								</div>
-								<!--end:Menu item-->
-								<!--begin:Menu item-->
-								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<!--begin:Menu link-->
-									<span class="menu-link">
-										<span class="menu-icon">
-											<i class="ki-duotone ki-address-book fs-2">
-												<span class="path1"></span>
-												<span class="path2"></span>
-												<span class="path3"></span>
-											</i>
-										</span>
-										<span class="menu-title">User Profile</span>
-										<span class="menu-arrow"></span>
-									</span>
-									<!--end:Menu link-->
-									<!--begin:Menu sub-->
-									<div class="menu-sub menu-sub-accordion">
-										<!--begin:Menu item-->
-										<div class="menu-item">
-											<!--begin:Menu link-->
-											<a class="menu-link" href="#">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Overview</span>
-											</a>
-											<!--end:Menu link-->
-										</div>
-										<!--end:Menu item-->
-										<!--begin:Menu item-->
-										<div class="menu-item">
-											<!--begin:Menu link-->
-											<a class="menu-link" href="#">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Projects</span>
-											</a>
-											<!--end:Menu link-->
-										</div>
-										<!--end:Menu item-->
-										<!--begin:Menu item-->
-										<div class="menu-item">
-											<!--begin:Menu link-->
-											<a class="menu-link" href="#">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Campaigns</span>
-											</a>
-											<!--end:Menu link-->
-										</div>
-										<!--end:Menu item-->
-									</div>
-									<!--end:Menu sub-->
-								</div>
-								<!--end:Menu item-->
-								<!--begin:Menu item-->
-								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<!--begin:Menu link-->
-									<span class="menu-link">
-										<span class="menu-icon">
-											<i class="ki-duotone ki-user fs-2">
-												<span class="path1"></span>
-												<span class="path2"></span>
-											</i>
-										</span>
-										<span class="menu-title">Authentication</span>
-										<span class="menu-arrow"></span>
-									</span>
-									<!--end:Menu link-->
-									<!--begin:Menu sub-->
-									<div class="menu-sub menu-sub-accordion">
-										<!--begin:Menu item-->
-										<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-											<!--begin:Menu link-->
-											<span class="menu-link">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Corporate Layout</span>
-												<span class="menu-arrow"></span>
-											</span>
-											<!--end:Menu link-->
-											<!--begin:Menu sub-->
-											<div class="menu-sub menu-sub-accordion menu-active-bg">
-												<!--begin:Menu item-->
-												<div class="menu-item">
-													<!--begin:Menu link-->
-													<a class="menu-link" href="authentication/layouts/corporate/sign-in.html">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-														<span class="menu-title">Sign-in</span>
-													</a>
-													<!--end:Menu link-->
-												</div>
-												<!--end:Menu item-->
-											</div>
-											<!--end:Menu sub-->
-										</div>
-										<!--end:Menu item-->
-									</div>
-									<!--end:Menu sub-->
-								</div>
-								<!--end:Menu item-->
+								@include('layouts.menu-sidebar')
 							</div>
 							<!--end::Menu-->
 						</div>
@@ -349,7 +172,7 @@
 											<div class="menu-content d-flex align-items-center px-3">
 												<!--begin::Avatar-->
 												<div class="symbol symbol-50px me-5">
-													<img alt="Logo" src="assets/media/avatars/300-1.jpg" />
+													<img alt="Logo" src="{{ asset('assets/media/avatars/300-1.jpg') }}" />
 												</div>
 												<!--end::Avatar-->
 												<!--begin::Username-->
@@ -397,7 +220,7 @@
 					<!--begin::Container-->
 					<div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
 						<!--begin::Post-->
-						<div class="content flex-row-fluid" id="kt_content">
+						<div class="content flex-row-fluid py-2" id="kt_content">
 							<!--begin::Row-->
 							<div class="row gy-0 gx-10">
                                 {{ $slot }}
@@ -463,6 +286,9 @@
 		<!--begin::Vendors Javascript(used for this page only)-->
 		<script src="{{ asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
 		<script src="{{ asset('assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
+		<script src="{{ asset('assets/js/custom/apps/user-management/users/list/table.js') }}"></script>
+		<script src="{{ asset('assets/js/custom/apps/user-management/users/list/export-users.js') }}"></script>
+		<script src="{{ asset('assets/js/custom/apps/user-management/users/list/add.js') }}"></script>
 		<!--end::Vendors Javascript-->
 		<!--end::Javascript-->
 
