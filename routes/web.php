@@ -23,10 +23,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'uisheet'])->name('uisheet');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified',])->group(function () {
-    // Route::get('/dashboard', function () {
-    //     return view('dashboard');
-    // })->name('dashboard');
+    // ruta para gestionar los usuarios
     Route::view('dashboard/users', 'livewire.user.index')->name('dashboard.users')->middleware('can_view:user');
+    // ruta para gestionar los roles
+    Route::view('dashboard/roles', 'livewire.role.index')->name('dashboard.roles')->middleware('can_view:role');
 
         // Permission Module
         Route::get('/role-permission',[RolePermission::class, 'index'])->name('role.permission.list');

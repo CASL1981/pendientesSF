@@ -4,6 +4,8 @@
 lang="{{ str_replace('_', '-', app()->getLocale()) }}" 
 dir="{{$dir ? 'rtl' : 'ltr'}}"
 class="theme-fs-sm"
+data-bs-theme="light"
+data-bs-theme-color="theme-color-default"
 >
 <head>
     <meta charset="utf-8">
@@ -14,7 +16,8 @@ class="theme-fs-sm"
 
     @include('partials.dashboard._head')
 </head>
-<body class="light" >
+<body class="light theme-fs-sm" data-bs-theme-color="theme-color-default">
+@include('partials.dashboard._body')
     <script>
 
         // theme-toggle.js
@@ -47,9 +50,17 @@ class="theme-fs-sm"
             darkModeButton.addEventListener('click', () => setTheme('dark'));
         });
 
+        document.addEventListener('livewire:init', () => {
+            Livewire.on('alert', (param) => {
+                toastr.options = {
+                "closeButton" : true,
+                "progressBar" : true
+                }
 
+                toastr[param[0]['type']](param[0]['message']);
+            });
+        });
     </script>
-@include('partials.dashboard._body')
 </body>
 
 </html>

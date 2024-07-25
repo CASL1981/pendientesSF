@@ -153,32 +153,36 @@
                     <span class="item-name">Perfil Usuario</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link {{activeRoute(route('users.create'))}}" href="{{route('users.create')}}">
-                    <i class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
-                            <g>
-                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
-                            </g>
-                        </svg>
-                    </i>
-                    <i class="sidenav-mini-icon"> E </i>
-                    <span class="item-name">Edit User</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{activeRoute(route('users.index'))}}" href="{{route('users.index')}}">
-                    <i class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
-                            <g>
-                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
-                            </g>
-                        </svg>
-                    </i>
-                    <i class="sidenav-mini-icon"> U </i>
-                    <span class="item-name">User List</span>
-                </a>
-            </li>
+            @can('user read')
+                <li class="nav-item">
+                    <a class="nav-link {{activeRoute(route('users.index'))}}" href="{{route('users.index')}}">
+                        <i class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
+                                <g>
+                                <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                </g>
+                            </svg>
+                        </i>
+                        <i class="sidenav-mini-icon"> U </i>
+                        <span class="item-name">User List</span>
+                    </a>
+                </li>
+            @endcan
+            @can('role read')
+                <li class="nav-item">
+                    <a class="nav-link {{activeRoute(route('dashboard.roles'))}}" href="{{route('dashboard.roles')}}">
+                        <i class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
+                                <g>
+                                <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                </g>
+                            </svg>
+                        </i>
+                        <i class="sidenav-mini-icon"> R </i>
+                        <span class="item-name">Roles y Permisos</span>
+                    </a>
+                </li>
+            @endcan
         </ul>
     </li>
     <li><hr class="hr-horizontal"></li>

@@ -1,12 +1,7 @@
 <nav class="nav navbar navbar-expand-lg navbar-light iq-navbar">
   <div class="container-fluid navbar-inner">
     <a href="{{route('dashboard')}}" class="navbar-brand">
-      <svg width="30" class="text-primary" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="-0.757324" y="19.2427" width="28" height="4" rx="2" transform="rotate(-45 -0.757324 19.2427)" fill="currentColor"/>
-        <rect x="7.72803" y="27.728" width="28" height="4" rx="2" transform="rotate(-45 7.72803 27.728)" fill="currentColor"/>
-        <rect x="10.5366" y="16.3945" width="16" height="4" rx="2" transform="rotate(45 10.5366 16.3945)" fill="currentColor"/>
-        <rect x="10.5562" y="-0.556152" width="28" height="4" rx="2" transform="rotate(45 10.5562 -0.556152)" fill="currentColor"/>
-      </svg>
+      <img src="{{asset('images/logo.png')}}" class="img-fluid rounded-normal" alt="logo" width="20px" height="20px">
       <h4 class="logo-title">{{env('APP_NAME')}}</h4>
     </a>
     <div class="sidebar-toggle" data-toggle="sidebar" data-active="true">
@@ -43,7 +38,6 @@
                       <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path fill="currentColor" d="M9,2C7.95,2 6.95,2.16 6,2.46C10.06,3.73 13,7.5 13,12C13,16.5 10.06,20.27 6,21.54C6.95,21.84 7.95,22 9,22A10,10 0 0,0 19,12A10,10 0 0,0 9,2Z"></path>
                       </svg>
-                      D
                   </label>
               </div>
               <div data-setting="radio">
@@ -53,7 +47,6 @@
                           <path fill="currentColor" d="M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8M12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31L23.31,12L20,8.69Z">
                           </path>
                       </svg>
-                      L
                   </label>
               </div>
           </div>

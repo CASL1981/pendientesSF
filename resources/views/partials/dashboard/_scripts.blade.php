@@ -42,6 +42,7 @@
 @endif
 
 <script src="{{asset('vendor/vanillajs-datepicker/dist/js/datepicker-full.js')}}"></script>
+<script src="{{asset('js/toastr.min.js')}}"></script>
 
 @stack('scripts')
 
