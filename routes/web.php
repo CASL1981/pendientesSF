@@ -27,27 +27,22 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified',]
     Route::view('dashboard/users', 'livewire.user.index')->name('dashboard.users')->middleware('can_view:user');
     // ruta para gestionar los roles
     Route::view('dashboard/roles', 'livewire.role.index')->name('dashboard.roles')->middleware('can_view:role');
+    // ruta para gestionar los centros de costos
+    Route::view('destinations', 'livewire.destination.index')->name('dashboard.destinations')->middleware('can_view:destination');
 
         // Permission Module
-        Route::get('/role-permission',[RolePermission::class, 'index'])->name('role.permission.list');
-        Route::resource('permission',PermissionController::class);
-        Route::resource('role', RoleController::class);
+        // Route::get('/role-permission',[RolePermission::class, 'index'])->name('role.permission.list');
+        // Route::resource('permission',PermissionController::class);
+        // Route::resource('role', RoleController::class);
 
         // Dashboard Routes
         Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
         // Users Module
-        Route::resource('users', UserController::class);
+        // Route::resource('users', UserController::class);
+        Route::get('/users/index', [UserController::class, 'index'])->name('users.index');
 
-        //App Details Page => 'Dashboard'], function() {
-    Route::group(['prefix' => 'menu-style'], function() {
-        //MenuStyle Page Routs
-        Route::get('horizontal', [HomeController::class, 'horizontal'])->name('menu-style.horizontal');
-        Route::get('dual-horizontal', [HomeController::class, 'dualhorizontal'])->name('menu-style.dualhorizontal');
-        Route::get('dual-compact', [HomeController::class, 'dualcompact'])->name('menu-style.dualcompact');
-        Route::get('boxed', [HomeController::class, 'boxed'])->name('menu-style.boxed');
-        Route::get('boxed-fancy', [HomeController::class, 'boxedfancy'])->name('menu-style.boxedfancy');
-    });
+
 });
 
 

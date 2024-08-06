@@ -53,14 +53,14 @@ trait TableLivewire
         $this->resetValidation();
         $this->resetExcept(['model', 'exportable', 'keyWord']);
     }
-    
+
     public function updatedSelectAll($value)
     {
         $value ? $this->selectedModel = $this->model::pluck('id') : $this->selectedModel = [];
     }
     
     public function export($ext)
-    {        
+    {
         abort_if(!in_array($ext, ['csv', 'xlsx', 'pdf']), Response::HTTP_NOT_FOUND);
         
         $query = new $this->model;
@@ -70,17 +70,26 @@ trait TableLivewire
         return Excel::download(new $this->exportable($query), 'filename.' . $ext);
     }
 
+    /**
+     * devolvemos el modal de auditoria con los datos del registro seleccionado
+     * @return void
+     */
     public function auditoria()
-    {        
+    {
+        //validamos que el registro este seleccionado
         if ($this->selected_id) {
+            //consultamos el registro seleccionado y cargamos los datos de la auditoria
             $this->audit = $this->model::with(['creator', 'editor'])->find($this->selected_id)->toArray();
             $this->showauditor = true;
         } else {
             $this->dispatch('alert', ['type' => 'warning', 'message' => 'Selecciona un registros']);
         }
-        
     }
-    
+
+    /**
+     * cerramos el modal de auditoria
+     * @return void
+     */
     public function showaudit()
     {
         $this->showauditor = false;

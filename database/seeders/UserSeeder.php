@@ -39,7 +39,7 @@ class UserSeeder extends Seeder
         ];
 
         $modules = [
-            'client',
+            'destination',
             'user',
             'role',
         ];

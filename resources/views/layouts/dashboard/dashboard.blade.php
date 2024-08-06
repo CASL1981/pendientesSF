@@ -59,6 +59,22 @@ data-bs-theme-color="theme-color-default"
 
                 toastr[param[0]['type']](param[0]['message']);
             });
+
+            // evento para validar la duplicación de los registros
+            Livewire.on('duplicarItem', () => {
+            Swal.fire({
+                title: 'Estas segro?',
+                text: "¡Deseas Duplicar este Registro!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, Duplicalo!'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    Livewire.dispatch('doubleItem')
+                }});
+            });
         });
     </script>
 </body>

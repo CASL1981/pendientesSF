@@ -2,6 +2,7 @@
 
 namespace App\Traits;
 
+use Livewire\Attributes\On;
 use Modules\Orders\Entities\Operation;
 
 trait CRUDLivewireTrait
@@ -26,10 +27,11 @@ trait CRUDLivewireTrait
         $this->model::create($validate);
 
         $this->resetInput();
-    	$this->emit('alert', ['type' => 'success', 'message' => $this->messageModel . ' creada']);
+    	$this->dispatch('alert', ['type' => 'success', 'message' => $this->messageModel . ' creada']);
 
     }
 
+    #[On('doubleItem')] //escuchamos el evento emitido desde el layout dashboard
     public function doubleItem()
     {
         can($this->permissionModel . ' create');
@@ -49,7 +51,7 @@ trait CRUDLivewireTrait
             $record->update($validate);
 
             $this->closed();
-    		$this->emit('alert', ['type' => 'success', 'message' => $this->messageModel . ' actualizada']);
+    		$this->dispatch('alert', ['type' => 'success', 'message' => $this->messageModel . ' actualizada']);
         }
     }
 
@@ -61,7 +63,7 @@ trait CRUDLivewireTrait
 
         if($status[0]['status'] <> 'Open'){
             $this->resetInput();
-            return $this->emit('alert', ['type' => 'warning', 'message' => 'Item no se encuentra en estado activo']);
+            return $this->dispatch('alert', ['type' => 'warning', 'message' => 'Item no se encuentra en estado activo']);
         };
 
         $product = $this->model::find($this->selected_id);
@@ -72,7 +74,7 @@ trait CRUDLivewireTrait
             $this->emit('alert', ['type' => 'success', 'message' => $this->messageModel . ' Anulado']);
         } else {
             $this->resetInput();
-            $this->emit('alert', ['type' => 'warning', 'message' => $this->messageModel . ' ya esta Anulado no se puede Eliminar']);
+            $this->dispatch('alert', ['type' => 'warning', 'message' => $this->messageModel . ' ya esta Anulado no se puede Eliminar']);
         }
 
     }
@@ -86,10 +88,10 @@ trait CRUDLivewireTrait
         if($modelo && $status[0]['status'] === 'Open') {
             $modelo->update([ 'status' => 'Completed' ]); //actualizamos el estado de los modelos
             $this->resetInput();
-            $this->emit('alert', ['type' => 'success', 'message' => $this->messageModel . ' Cmpletada']);
+            $this->dispatch('alert', ['type' => 'success', 'message' => $this->messageModel . ' Cmpletada']);
         } else {
             $this->resetInput();
-            $this->emit('alert', ['type' => 'warning', 'message' => $this->messageModel . ' no esta abierta o en proceso, no se puede Procesar']);
+            $this->dispatch('alert', ['type' => 'warning', 'message' => $this->messageModel . ' no esta abierta o en proceso, no se puede Procesar']);
         }
     }
 
@@ -103,10 +105,10 @@ trait CRUDLivewireTrait
             $product->update([ 'deleted_by' => NULL, 'status' => 'Open' ]); //actualizamos el estado de los modelos
             $product->restore(); //reversamos la eliminación con softdelete
             $this->resetInput();
-            $this->emit('alert', ['type' => 'success', 'message' => $this->messageModel . ' Activa']);
+            $this->dispatch('alert', ['type' => 'success', 'message' => $this->messageModel . ' Activa']);
         } else {
             $this->resetInput();
-            $this->emit('alert', ['type' => 'warning', 'message' => $this->messageModel . ' no esta Anulado o Procesada']);
+            $this->dispatch('alert', ['type' => 'warning', 'message' => $this->messageModel . ' no esta Anulado o Procesada']);
         }
     }
 
@@ -121,7 +123,7 @@ trait CRUDLivewireTrait
 
             if(!$status || $status[0]['status'] == 'Completed'){
                 $this->resetInput();
-                return $this->emit('alert', ['type' => 'warning', 'message' => 'Item Anulado o No se encuentra en estado activo no se puede cambiar']);
+                return $this->dispatch('alert', ['type' => 'warning', 'message' => 'Item Anulado o No se encuentra en estado activo no se puede cambiar']);
             };
 
 
@@ -138,7 +140,7 @@ trait CRUDLivewireTrait
                 $this->selectAll = false;
             }
         } else {
-            $this->emit('alert', ['type' => 'warning', 'message' => 'Selecciona un Item']);
+            $this->dispatch('alert', ['type' => 'warning', 'message' => 'Selecciona un Item']);
         }
     }
 }

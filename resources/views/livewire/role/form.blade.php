@@ -1,4 +1,4 @@
-<<x-confirmation-modal wire:model="show">
+<x-confirmation-modal wire:model="show">
     <x-slot name="title">
         Creación de Roles
     </x-slot>
