@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Destination;
 use App\Models\User;
 use App\Traits\CRUDLivewireTrait;
 use App\Traits\TableLivewire;
@@ -16,7 +17,7 @@ class Users extends Component
     use TableLivewire;
     use WithPagination;
 
-    public $identification, $name, $lastname, $area, $email, $status, $role_id, $destination_id;
+    public $identification, $name, $lastname, $area, $email, $status, $role_id, $destination, $destinations;
 
     public $roles;
 
@@ -26,6 +27,7 @@ class Users extends Component
         // $this->exportable ='App\Exports\EmployeesExport';
 
         $this->roles = Role::pluck('name', 'id')->toArray();
+        $this->destinations = Destination::pluck('name', 'costcenter')->toArray();
     }
 
     protected function rules()
@@ -34,11 +36,11 @@ class Users extends Component
             'identification'      => 'required|min:7|max:12',
             'name'      => 'required|min:3|max:100',
             'lastname'       => 'required|min:3|max:100',
-            'email'          => ['required', 'max:100', Rule::unique('users')->ignore($this->identification)],
+            'email'          => ['required', 'max:100', Rule::unique('users')->ignore($this->selected_id)],
             'area'           => 'required|in:Administrativa,Comercial,Farmacia,Financiero',
             'status'         => 'nullable',
             'role_id'        => 'nullable',
-            // 'destination_id' => 'nullable',
+            'destination'    => 'nullable',
         ];
     }
 
@@ -47,7 +49,7 @@ class Users extends Component
         $this->bulkDisabled = count($this->selectedModel) < 1;
 
         $users = User::paginate(10);
-
+        // dd($destinactions);
         return view('livewire.users.view', compact('users'));
     }
 
@@ -90,7 +92,7 @@ class Users extends Component
         $this->email = $record->email;
         $this->status = $record->status;
         $this->role_id = $record->role_id;
-        $this->destination_id = $record->destination_id;
+        $this->destination = $record->destination;
 
         $this->show = true;
     }
@@ -104,14 +106,16 @@ class Users extends Component
     		$record = User::find($this->selected_id);
 
             $record->update($validate);
-            
+
             //Asignamos el rol seleccionado
             $role = Role::find($this->role_id);
-            $record->syncRoles($role->name);
-            
+            if ($role) {
+                $record->syncRoles($role->name);
+            }
+
             //reiniciamos los campos
             $this->cancel();
-            // $this->emit('CloseModal', ['modalName' => '#ModalUser']); // Close model to using to jquery
+
     		//Mensaje de actualización
              $this->dispatch('alert', ['type' => 'success', 'message' => 'Usuario actualizado']);
         }
@@ -119,7 +123,8 @@ class Users extends Component
 
     public function cancel()
     {
-        $this->reset(['identification', 'name', 'lastname', 'area', 'email', 'status', 'role_id', 'destination_id', 'selected_id']);
+        $this->reset(['identification', 'name', 'lastname', 'area', 'email', 'status', 'role_id', 
+                        'destination', 'selected_id', 'selectedModel']);
         $this->show = false;
         // $this->emit('CloseModal', ['modalName' => '#ModalUser']); // Close model to using to jquery
     }

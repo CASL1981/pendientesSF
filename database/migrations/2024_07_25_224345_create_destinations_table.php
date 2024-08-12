@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('destinations', function (Blueprint $table) {
             $table->id();
-            $table->string('costcenter', 20)->comment('codigo del centro de costos');
+            $table->string('costcenter', 10)->comment('codigo del centro de costos');
             $table->string('name', 192)->comment('nombre del centro de costo');
             $table->string('address', 254)->nullable();
             $table->string('phone', 20)->nullable();

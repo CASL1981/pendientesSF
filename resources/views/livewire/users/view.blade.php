@@ -64,7 +64,7 @@
                               <td class="p-1" width="10px">{{ $item->email }}</td>
                               <td class="p-1">{{ $item->area }}</td>
                               <td class="text-center p-1"><span class="badge bg-primary">{{ $item->status ? 'Activo' : 'Inactivo' }}</span></td>
-                              <td class="p-1">{{ $item->destination_id }}</td>
+                              <td class="p-1">{{ $item->destination }}</td>
                               <td class="p-1">{{ $item->created_at->format('d/m/Y') }}</td>:
                               {{-- <td class="p-1">
                                  <div class="flex align-items-center list-user-action">

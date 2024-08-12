@@ -32,10 +32,16 @@
                     <x-select wire:model="role_id" class="form-control-sm" id="role_id" :options="$roles"/>
                     <x-form.input-error for="role_id" class="mt-2"/>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-5">
                     <x-form.label for="email" value="{{ __('Email') }}" />
                     <x-form.input wire:model="email" class="form-control-sm" id="email" />
                     <x-form.input-error for="email" class="mt-2"/>
+                </div>
+                <div class="form-group col-md-4">
+                    <x-form.label for="destination" value="{{ __('Destination') }}" />
+                    <x-select wire:model="destination" class="form-control-sm" id="destination"
+                    :options="$destinations"/>
+                    <x-form.input-error for="destination" class="mt-2"/>
                 </div>
             </div>
         </form>
