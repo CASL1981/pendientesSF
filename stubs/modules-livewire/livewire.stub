@@ -1,0 +1,51 @@
+<?php
+
+namespace [namespace];
+
+use Livewire\Component;
+
+class [class] extends Component
+{
+    use WithPagination;
+    use TableLivewire;
+    use CRUDLivewireTrait;
+
+
+    public function hydrate()
+    {
+        $this->permissionModel = '';
+
+        $this->messageModel = '';
+
+        $this->exportable ='App\Exports\sExport';
+        $this->model = 'App\Models\';
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function render()
+    {
+        $this->bulkDisabled = count($this->selectedModel) < 1;
+
+        $s = new ();
+
+        $s = $[view]s->QueryTable($this->keyWord, $this->sortField, $this->sortDirection)->paginate(10);
+        return view('[view]');
+    }
+
+    /**
+     * returns the values ​​of the s to edit
+     * @return void
+     */
+    public function edit()
+    {
+        can(' update');
+
+        $record = ::findOrFail($this->selected_id);
+
+
+
+        $this->show = true;
+    }
+}
