@@ -116,11 +116,21 @@
     <li><hr class="hr-horizontal"></li>
     <li class="nav-item static-item">
         <a class="nav-link static-item disabled" href="#" tabindex="-1">
-            <span class="default-icon">Configuraciones</span>
+            <span class="default-icon">Gestiones</span>
             <span class="mini-icon">-</span>
         </a>
     </li>
     <li class="nav-item">
+        <a class="nav-link {{activeRoute(route('pharmacy.pending'))}}" href="{{ route('pharmacy.pending') }}" >
+            <i class="icon">
+                <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.87774 6.37856C8.87774 8.24523 7.33886 9.75821 5.43887 9.75821C3.53999 9.75821 2 8.24523 2 6.37856C2 4.51298 3.53999 3 5.43887 3C7.33886 3 8.87774 4.51298 8.87774 6.37856ZM20.4933 4.89833C21.3244 4.89833 22 5.56203 22 6.37856C22 7.19618 21.3244 7.85989 20.4933 7.85989H13.9178C13.0856 7.85989 12.4101 7.19618 12.4101 6.37856C12.4101 5.56203 13.0856 4.89833 13.9178 4.89833H20.4933ZM3.50777 15.958H10.0833C10.9155 15.958 11.5911 16.6217 11.5911 17.4393C11.5911 18.2558 10.9155 18.9206 10.0833 18.9206H3.50777C2.67555 18.9206 2 18.2558 2 17.4393C2 16.6217 2.67555 15.958 3.50777 15.958ZM18.5611 20.7778C20.4611 20.7778 22 19.2648 22 17.3992C22 15.5325 20.4611 14.0196 18.5611 14.0196C16.6623 14.0196 15.1223 15.5325 15.1223 17.3992C15.1223 19.2648 16.6623 20.7778 18.5611 20.7778Z" fill="currentColor" />
+                </svg>
+            </i>
+            <span class="item-name">Pendientes</span>
+        </a>
+    </li>
+    {{-- <li class="nav-item">
         <a class="nav-link " data-bs-toggle="collapse" href="#sidebar-user" role="button" aria-expanded="false" aria-controls="sidebar-user">
             <i class="icon">
                 <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -184,7 +194,7 @@
                 </li>
             @endcan
         </ul>
-    </li>
+    </li> --}}
     <li><hr class="hr-horizontal"></li>
     <li class="nav-item static-item">
         <a class="nav-link static-item disabled" href="#" tabindex="-1">
@@ -192,14 +202,14 @@
             <span class="mini-icon">-</span>
         </a>
     </li>
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link {{activeRoute(route('dashboard.destinations'))}}" href="{{ route('dashboard.destinations') }}" >
             <i class="icon">
                 <svg fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-24" width="24" height="24" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.45 4.88017H16.52C20.21 4.88017 22.01 6.85017 22 10.8902V15.7602C22 19.6202 19.62 22.0002 15.75 22.0002H8.24C4.39 22.0002 2 19.6202 2 15.7502V8.24017C2 4.10017 3.84 2.00017 7.47 2.00017H9.05C9.981 1.99017 10.85 2.42017 11.42 3.15017L12.3 4.32017C12.58 4.67017 13 4.88017 13.45 4.88017ZM7.37 15.2902H16.63C17.04 15.2902 17.37 14.9502 17.37 14.5402C17.37 14.1202 17.04 13.7902 16.63 13.7902H7.37C6.95 13.7902 6.62 14.1202 6.62 14.5402C6.62 14.9502 6.95 15.2902 7.37 15.2902Z" fill="currentColor"></path></svg>
             </i>
             <span class="item-name">Centros de Costos</span>
         </a>
-    </li>
+    </li> --}}
     {{-- <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-widget" role="button" aria-expanded="false" aria-controls="sidebar-widget">
             <i class="icon">

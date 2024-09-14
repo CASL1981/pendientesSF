@@ -19,7 +19,7 @@ class Destination extends Model
         'updated_at' => 'datetime:d-m-Y h:m:s',
     ];
 
-    public function QueryTable($keyWord = null, $sortField, $sortDirection)
+    public function QueryTable($keyWord = null, $sortField, $sortDirection): mixed
     {
         return $this->select('id','costcenter', 'name', 'address', 'phone', 'location', 'minimun', 'maximun')
         ->search('name', $keyWord)

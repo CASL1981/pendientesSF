@@ -37,6 +37,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified',]
 
         // Dashboard Routes
         Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+        Route::get('/pharmacy', [HomeController::class, 'index'])->name('pharmacy');
 
         // Users Module
         // Route::resource('users', UserController::class);

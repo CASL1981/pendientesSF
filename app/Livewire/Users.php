@@ -49,7 +49,7 @@ class Users extends Component
         $this->bulkDisabled = count($this->selectedModel) < 1;
 
         $users = User::paginate(10);
-        // dd($destinactions);
+
         return view('livewire.users.view', compact('users'));
     }
 

@@ -18,6 +18,7 @@ class PermissionTableSeeder extends Seeder
 
         $modules = [
             'product',
+            'pending',
         ];
 
         //CRUD
@@ -34,7 +35,10 @@ class PermissionTableSeeder extends Seeder
 
         foreach($modules as $rol){
             foreach($permissions as $per){
-                Permission::create(['name' => "{$rol} $per"]);
+                Permission::create([
+                    'name' => "{$rol} $per",
+                    'modelo' => "{$rol}"
+                ]);
             }
         }
 

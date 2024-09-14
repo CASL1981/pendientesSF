@@ -1,7 +1,7 @@
 <div id="loading">
     @include('partials.dashboard._body_loader')
 </div>
-@include('shopping::partials.dashboard._body_sidebar')
+@include('pharmacy::partials.dashboard._body_sidebar')
 <main class="main-content">
     <div class="position-relative">
     @include('partials.dashboard._body_header')

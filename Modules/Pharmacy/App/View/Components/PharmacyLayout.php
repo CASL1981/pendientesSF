@@ -1,13 +1,17 @@
 <?php
 
-namespace Modules\Shopping\App\View\Components;
+namespace Modules\Pharmacy\App\View\Components;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
 
-class ShoppingLayout extends Component
+class PharmacyLayout extends Component
 {
-    public $layout, $dir, $assets;
+    public $layout;
+
+    public  $dir;
+
+    public  $assets;
 
     /**
      * Create a new component instance.
@@ -24,6 +28,6 @@ class ShoppingLayout extends Component
      */
     public function render(): View|string
     {
-        return view('shopping::layouts.shopping');
+        return view('pharmacy::layouts.pharmacy');
     }
 }
