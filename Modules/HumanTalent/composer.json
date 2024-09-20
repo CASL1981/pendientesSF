@@ -1,0 +1,31 @@
+{
+    "name": "nwidart/humantalent",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\HumanTalent\\": "",
+            "Modules\\HumanTalent\\App\\": "app/",
+            "Modules\\HumanTalent\\Database\\Factories\\": "database/factories/",
+            "Modules\\HumanTalent\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\HumanTalent\\Tests\\": "tests/"
+        }
+    }
+}

@@ -112,6 +112,7 @@ trait CRUDLivewireTrait
         }
     }
 
+    #[On('toggleItem')] //escuchamos el evento emitido desde el componente button-toggle
     public function toggleItem()
     {
         can($this->permissionModel . ' toggle');

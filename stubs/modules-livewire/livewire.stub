@@ -2,7 +2,10 @@
 
 namespace [namespace];
 
+use App\Traits\CRUDLivewireTrait;
+use App\Traits\TableLivewire;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class [class] extends Component
 {
@@ -18,7 +21,7 @@ class [class] extends Component
         $this->messageModel = '';
 
         $this->exportable ='App\Exports\sExport';
-        $this->model = 'App\Models\';
+        $this->model = 'Modules\$[view]\App\Models\modelo';
     }
 
     /**

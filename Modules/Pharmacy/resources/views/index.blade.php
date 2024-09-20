@@ -1,4 +1,4 @@
-<x-pharmacy::pharmacy-layout>
+<x-pharmacy::pharmacy-layout :assets="$assets ?? []">
    <div class="row">
       <div class="col-md-12 col-lg-12">
          <div class="row row-cols-1">
@@ -13,7 +13,6 @@
                               </svg>
                            </div>
                            <div class="progress-detail">
-                              <h1>aqui</h1>
                               <p  class="mb-2">Total Sales</p>
                               <h4 class="counter" style="visibility: visible;">$560K</h4>
                            </div>

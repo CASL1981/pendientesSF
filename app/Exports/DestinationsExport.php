@@ -22,7 +22,7 @@ class DestinationsExport implements FromCollection, ShouldAutoSize, WithHeadings
     /**
     * @return \Illuminate\Support\Collection
     */
-    public function collection()
+    public function collection(): mixed
     {
         return $this->destinations ?: Destination::all();
     }

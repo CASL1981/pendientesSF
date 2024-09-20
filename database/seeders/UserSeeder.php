@@ -26,7 +26,6 @@ class UserSeeder extends Seeder
 
         $admin = Role::create(['name' => 'administrador']);
         $SF = Role::create(['name' => 'Director y Auxiliar SF']);
-        $ventasFarmacias = Role::create(['name' => 'Auxiliar de Ventas Farmacias']);
 
         //permissions from the CRUD
 

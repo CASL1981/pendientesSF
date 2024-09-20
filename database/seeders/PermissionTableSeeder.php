@@ -19,6 +19,7 @@ class PermissionTableSeeder extends Seeder
         $modules = [
             'product',
             'pending',
+            'employee',
         ];
 
         //CRUD

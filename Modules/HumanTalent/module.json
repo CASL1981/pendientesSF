@@ -1,0 +1,11 @@
+{
+    "name": "HumanTalent",
+    "alias": "humantalent",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\HumanTalent\\App\\Providers\\HumanTalentServiceProvider"
+    ],
+    "files": []
+}
