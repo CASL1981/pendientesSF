@@ -20,6 +20,8 @@ class PermissionTableSeeder extends Seeder
             'product',
             'pending',
             'employee',
+            'applystockpending',
+            'stock',
         ];
 
         //CRUD

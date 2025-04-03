@@ -58,7 +58,7 @@ $maxWidth = [
                             <h4 class="card-header text-white bg-info">Creado</h4>
                             <div class="card-body">
                                 <p class="card-text">Usuario: {{$audit["creator"]["email"] ?? ''}}</p>
-                                <p class="card-text">Fecha: {{$audit["created_at"] ?? ''}}</p>
+                                <p class="card-text">Fecha: {{ $audit["created_at"] ?? ''}}</p>
                             </div>
                         </div>
                     </div>

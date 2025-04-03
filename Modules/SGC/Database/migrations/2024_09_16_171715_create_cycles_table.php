@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();
         });
+
     }
 
     /**
@@ -28,5 +29,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('sgc_cycles');
+        Schema::dropIfExists('sgc_auditores');
+        Schema::dropIfExists('sgc_auditados');
     }
 };

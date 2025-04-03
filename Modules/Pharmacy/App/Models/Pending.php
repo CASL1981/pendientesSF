@@ -23,8 +23,8 @@ class Pending extends Model
     /**
      * The attributes that are mass assignable.
      */
-    protected $fillable = ['type', 'destination_id', 'product_id', 'quantity', 'send_quantity', 'reason', 'duration', 'EPS',
-     'contracting_modality', 'user_id', 'invoicing_method', 'manager', 'order', 'circular', 'observations', 'status'];
+    protected $fillable = ['type', 'category','destination', 'reason', 'duration', 'EPS', 'contracting_modality', 'user_id', 
+                            'invoicing_method', 'manager', 'observations', 'status'];
 
     protected static function newFactory(): PendingFactory
     {
@@ -38,24 +38,12 @@ class Pending extends Model
 
     public function QueryTable($keyWord = null, $sortField, $sortDirection): mixed
     {
-        return $this->select('id','type', 'destination_id', 'product_id', 'quantity', 'send_quantity', 'reason', 'duration', 'EPS',
-     'contracting_modality', 'user_id', 'invoicing_method', 'manager', 'order', 'circular', 'observations', 'status')
+        return $this->select('id','type', 'category','destination', 'reason', 'duration', 'EPS', 'contracting_modality', 'user_id',
+                    'invoicing_method', 'manager', 'observations', 'status', 'created_at')
         ->search('type', $keyWord)
-        ->search('product_id', $keyWord)
-        ->search('destination_id', $keyWord)
         ->search('observations', $keyWord)
         ->search('status', $keyWord)
         ->orderBy($sortField, $sortDirection);
-    }
-
-    public function destination():BelongsTo
-    {
-        return $this->belongsTo(Destination::class);
-    }
-
-    public function product():BelongsTo
-    {
-        return $this->belongsTo(Product::class);
     }
 
     public function user():BelongsTo

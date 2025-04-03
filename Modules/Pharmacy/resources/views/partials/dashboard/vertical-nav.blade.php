@@ -6,7 +6,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link {{activeRoute(route('dashboard'))}}" aria-current="page" href="{{route('dashboard')}}">
+        <a class="nav-link {{activeRoute(route('pharmacy'))}}" aria-current="page" href="{{route('pharmacy')}}">
             <i class="icon">
                 <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.4" d="M16.0756 2H19.4616C20.8639 2 22.0001 3.14585 22.0001 4.55996V7.97452C22.0001 9.38864 20.8639 10.5345 19.4616 10.5345H16.0756C14.6734 10.5345 13.5371 9.38864 13.5371 7.97452V4.55996C13.5371 3.14585 14.6734 2 16.0756 2Z" fill="currentColor"></path>
@@ -120,6 +120,7 @@
             <span class="mini-icon">-</span>
         </a>
     </li>
+    @can('pending read')
     <li class="nav-item">
         <a class="nav-link {{activeRoute(route('pharmacy.pending'))}}" href="{{ route('pharmacy.pending') }}" >
             <i class="icon">
@@ -128,6 +129,18 @@
                 </svg>
             </i>
             <span class="item-name">Pendientes</span>
+        </a>
+    </li>
+    @endcan
+    @can('applystockpending read')
+        
+    @endcan
+    <li class="nav-item">
+        <a class="nav-link {{activeRoute(route('pharmacy.apply.stock.pending'))}}" href="{{ route('pharmacy.apply.stock.pending') }}" >
+            <i class="icon">
+                <svg viewBox="0 0 1024 1024" class="icon" class="icon-24" width="24" height="24"> version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M182.99 146.2h585.14v402.29h73.14V73.06H109.84v877.71H512v-73.14H182.99z" fill="#6c757d"></path><path d="M256.13 219.34h438.86v73.14H256.13zM256.13 365.63h365.71v73.14H256.13zM256.13 511.91h219.43v73.14H256.13zM731.55 585.06c-100.99 0-182.86 81.87-182.86 182.86s81.87 182.86 182.86 182.86c100.99 0 182.86-81.87 182.86-182.86s-81.86-182.86-182.86-182.86z m0 292.57c-60.5 0-109.71-49.22-109.71-109.71 0-60.5 49.22-109.71 109.71-109.71 60.5 0 109.71 49.22 109.71 109.71 0.01 60.49-49.21 109.71-109.71 109.71z" fill="#6c757d"></path><path d="M758.99 692.08h-54.86v87.27l69.39 68.76 38.61-38.96-53.14-52.66z" fill="#6c757d"></path></g></svg>
+            </i>
+            <span class="item-name">Asignación Stock</span>
         </a>
     </li>
     {{-- <li class="nav-item">
@@ -202,14 +215,14 @@
             <span class="mini-icon">-</span>
         </a>
     </li>
-    {{-- <li class="nav-item">
-        <a class="nav-link {{activeRoute(route('dashboard.destinations'))}}" href="{{ route('dashboard.destinations') }}" >
+    <li class="nav-item">
+        <a class="nav-link {{activeRoute(route('pharmacy.stock'))}}" href="{{ route('pharmacy.stock') }}" >
             <i class="icon">
                 <svg fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-24" width="24" height="24" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.45 4.88017H16.52C20.21 4.88017 22.01 6.85017 22 10.8902V15.7602C22 19.6202 19.62 22.0002 15.75 22.0002H8.24C4.39 22.0002 2 19.6202 2 15.7502V8.24017C2 4.10017 3.84 2.00017 7.47 2.00017H9.05C9.981 1.99017 10.85 2.42017 11.42 3.15017L12.3 4.32017C12.58 4.67017 13 4.88017 13.45 4.88017ZM7.37 15.2902H16.63C17.04 15.2902 17.37 14.9502 17.37 14.5402C17.37 14.1202 17.04 13.7902 16.63 13.7902H7.37C6.95 13.7902 6.62 14.1202 6.62 14.5402C6.62 14.9502 6.95 15.2902 7.37 15.2902Z" fill="currentColor"></path></svg>
             </i>
-            <span class="item-name">Centros de Costos</span>
+            <span class="item-name">Cargar Existencias</span>
         </a>
-    </li> --}}
+    </li>
     {{-- <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-widget" role="button" aria-expanded="false" aria-controls="sidebar-widget">
             <i class="icon">

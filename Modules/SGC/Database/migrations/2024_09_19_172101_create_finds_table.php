@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('checklist_id');
             $table->foreign('checklist_id')->references('id')->on('sgc_checklists')->onDelete('cascade');
             $table->unsignedBigInteger('criterion_id');
-            $table->foreign('criterion_id')->references('id')->on('sgc_criteria')->onDelete('cascade');
+            $table->foreign('criterion_id')->references('id')->on('sgc_criterions')->onDelete('cascade');
             $table->text('description')->comment('descripción de la NC');
             $table->text('evidence')->comment('evidencia de la NC');
             $table->text('consequence')->comment('consecuencia de la NC');

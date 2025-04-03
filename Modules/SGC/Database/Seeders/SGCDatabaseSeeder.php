@@ -15,6 +15,11 @@ class SGCDatabaseSeeder extends Seeder
     {
         // $this->call(CycleSeeder::class);
         // $this->call(ChecklistSeeder::class);
+        $this->call(FindSeeder::class);
+        $this->call(ObservationSeeder::class);
+        $this->call(ReporteSeeder::class);
+        $this->call(AuditorSeeder::class);
+        $this->call(AuditedSeeder::class);
 
         $admin = Role::find(1);
 
@@ -25,6 +30,10 @@ class SGCDatabaseSeeder extends Seeder
             'checklist',
             'criterion',
             'find',
+            'observation',
+            'report',
+            'auditor',
+            'audited',
         ];
 
         //CRUD

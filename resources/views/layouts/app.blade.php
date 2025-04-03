@@ -27,6 +27,7 @@
 
         <!-- Styles -->
         @livewireStyles
+		@stack('styles')
     </head>
     {{-- <body class="font-sans antialiased"> --}}
     <body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed aside-enabled">
@@ -263,20 +264,6 @@
 			<!--end::Page-->
 		</div>
 		<!--end::Root-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <!--begin::Javascript-->
 		<script>var hostUrl = "assets/";</script>
 		<!--begin::Global Javascript Bundle(mandatory for all pages)-->
@@ -295,5 +282,6 @@
         @stack('modals')
 
         @livewireScripts
+		@stack('scripts')
     </body>
 </html>

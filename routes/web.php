@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboar\PharmacyController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Security\PermissionController;
 use App\Http\Controllers\Security\RoleController;
@@ -20,7 +21,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 //UI Pages Routs
-Route::get('/', [HomeController::class, 'uisheet'])->name('uisheet');
+Route::get('/', function(): mixed
+{
+    return redirect()->route('login');
+});
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified',])->group(function () {
     // ruta para gestionar los usuarios
@@ -29,6 +33,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified',]
     Route::view('dashboard/roles', 'livewire.role.index')->name('dashboard.roles')->middleware('can_view:role');
     // ruta para gestionar los centros de costos
     Route::view('destinations', 'livewire.destination.index')->name('dashboard.destinations')->middleware('can_view:destination');
+    // ruta para gestionar las clasificaciones
+    Route::view('classifications', 'livewire.classification.index')->name('dashboard.classifications')->middleware('can_view:classification');
 
         // Permission Module
         // Route::get('/role-permission',[RolePermission::class, 'index'])->name('role.permission.list');
@@ -43,7 +49,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified',]
         // Route::resource('users', UserController::class);
         Route::get('/users/index', [UserController::class, 'index'])->name('users.index');
 
-
+        // Graficas de las dashboard
+        Route::get('/dashboard/graficas/pharmacy', [PharmacyController::class, 'index'])->name('dashboard.graficas.pharmacy');
 });
 
 

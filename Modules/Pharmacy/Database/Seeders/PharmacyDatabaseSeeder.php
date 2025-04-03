@@ -12,5 +12,7 @@ class PharmacyDatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call(PendingTableSeeder::class);
+        $this->call(StockSeeder::class);
+        $this->call(DetailPendingSeeder::class);
     }
 }

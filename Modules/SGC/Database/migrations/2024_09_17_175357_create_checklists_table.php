@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('process', 192)->comment('Proceso auditado');
             $table->date('date_activity')->comment('Fecha de la actividad');
             $table->text('responsible')->comment('Nommres de los responsables de la activiadad');
+            $table->text('strength')->nullable()->comment('Fortalezas de los auditados');
             $table->text('audited')->comment('Nombres de los auditados');
             $table->text('documents')->comment('Documentos de referencia');
             $table->text('observations')->nullable()->comment('Observaciones de la lista de chequeo');

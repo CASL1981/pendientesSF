@@ -152,4 +152,22 @@ class Criteria extends Component
         $this->selectAll = false;
         return $this->dispatch('alert', ['type' => 'warning', 'message' => 'Lista de chequeo no se encuentra abierta']);
     }
+
+    public function addObservation($id): mixed
+    {
+        can('observation create');
+
+        $status = $this->model::where('id', $id)->get('status')->toArray();
+
+        if($status[0]['status'])
+        {
+            return redirect()->route('sgc.checklist.criterion.observation')
+                            ->with('CriterionId', $id)
+                            ->with('ChecklistId', $this->checklist_id);
+        }
+
+        $this->selectedModel = [];
+        $this->selectAll = false;
+        return $this->dispatch('alert', ['type' => 'warning', 'message' => 'Lista de chequeo no se encuentra abierta']);
+    }
 }

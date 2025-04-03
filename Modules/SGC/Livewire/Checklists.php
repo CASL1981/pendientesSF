@@ -17,7 +17,7 @@ class Checklists extends Component
     use TableLivewire;
     use CRUDLivewireTrait;
 
-    public $cycle_id, $type, $destination_id, $process, $date_activity, $responsible, $audited, $documents, $observations, $prepared_by, $accepted_by;
+    public $cycle_id, $type, $destination_id, $process, $date_activity, $responsible, $audited, $documents, $observations, $prepared_by, $accepted_by, $strength;
 
     public $destinations, $cycles;
 
@@ -58,6 +58,7 @@ class Checklists extends Component
             'process' => 'required | min:3',
             'date_activity' => 'nullable | date',
             'responsible' => 'required | min:3',
+            'strength' => 'nullable | min:3',
             'audited' => 'required | min:3',
             'documents' => 'required|min:3',
             'observations' => 'nullable | min:3',
@@ -82,6 +83,7 @@ class Checklists extends Component
         $this->process = $record->process;
         $this->date_activity = $record->date_activity->format('Y-m-d');
         $this->responsible = $record->responsible;
+        $this->strength = $record->strength;
         $this->audited = $record->audited;
         $this->documents = $record->documents;
         $this->observations = $record->observations;

@@ -13,11 +13,13 @@ data-bs-theme-color="theme-color-default"
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{env('APP_NAME')}}</title>
+    @stack('styles')
 
     @include('partials.dashboard._head')
 </head>
 <body class="light theme-fs-sm" data-bs-theme-color="theme-color-default">
 @include('pharmacy::partials.dashboard._body')
+
 <script>
 
     // theme-toggle.js
@@ -77,6 +79,7 @@ data-bs-theme-color="theme-color-default"
         });
     });
 </script>
+@stack('scripts')
 </body>
 
 </html>

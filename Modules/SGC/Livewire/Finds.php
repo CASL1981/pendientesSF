@@ -43,14 +43,13 @@ class Finds extends Component
     {
         $this->bulkDisabled = count($this->selectedModel) < 1;
 
-        
+        $record = Find::where('criterion_id', $this->criterion_id)->first();
 
-        // if (count($find))
-        // {
-        //     $find = Criterion::where('id', $this->criterion_id)->get();
-        // }
+        if ($record)
+        {
+            $this->edit();
+        }
 
-        $this->edit();
 
         return view('sgc::livewire.find.view');
     }
@@ -85,8 +84,7 @@ class Finds extends Component
         Find::updateOrCreate(
             [
             'checklist_id' => $this->checklist_id,
-            'criterion_id' => $this->criterion_id,
-            'status' => 1],
+            'criterion_id' => $this->criterion_id,],
             [
             'description' => $this->description,
             'evidence' => $this->evidence,

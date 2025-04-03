@@ -11,6 +11,6 @@ class HumanTalentDatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call(EmployeeSeeder::class);
+        // $this->call(EmployeeSeeder::class);
     }
 }

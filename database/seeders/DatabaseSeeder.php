@@ -16,11 +16,11 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UserSeeder::class);
 
-        \App\Models\User::factory(50)->create();
+        // \App\Models\User::factory(50)->create();
 
         $this->call(DestinationSeeder::class);
         $this->call(PermissionTableSeeder::class);
-
+        $this->call(ClassificationSeeder::class);
 
 
         //importar datos desde archivos de excel

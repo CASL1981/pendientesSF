@@ -44,7 +44,7 @@ class Employee extends Model
     public function QueryTable($keyWord = null, $sortField, $sortDirection): mixed
     {
         return $this->select('id','identification', 'first_name', 'last_name','status', 'type_document',
-                            'address', 'phone', 'cel_phone', 'entry_date', 'email', 'gender', 'vendedor',
+                            'address', 'phone', 'cel_phone', 'entry_date', 'email', 'gender', 'vendedor', 'auditor',
                             'birth_date', 'location_id', 'approve', 'created_by', 'updated_by')
         ->with(['creator', 'editor'])
         ->search('first_name', $keyWord)

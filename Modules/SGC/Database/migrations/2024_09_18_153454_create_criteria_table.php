@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sgc_criteria', function (Blueprint $table) {
+        Schema::create('sgc_criterions', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('checklist_id');
             $table->foreign('checklist_id')->references('id')->on('sgc_checklists')->onDelete('cascade');

@@ -16,7 +16,14 @@ class FindFactory extends Factory
      */
     public function definition(): array
     {
-        return [];
+        return [
+            'checklist_id' => $this->faker->numberBetween(1, 8),
+            'criterion_id' => $this->faker->numberBetween(1, 149),
+            'description' => $this->faker->sentence(10),
+            'evidence' => $this->faker->sentence(10),
+            'consequence' => $this->faker->sentence(10),
+            'requirement' => $this->faker->sentence(10),
+        ];
     }
 }
 

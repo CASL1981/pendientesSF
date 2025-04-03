@@ -12,7 +12,7 @@ class Criterion extends Model
     use HasFactory;
     use Userstamps;
 
-    protected $table = 'sgc_criteria';
+    protected $table = 'sgc_criterions';
 
     /**
      * The attributes that are mass assignable.

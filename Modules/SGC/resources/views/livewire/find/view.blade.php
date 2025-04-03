@@ -9,7 +9,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="description"><strong>Descripción</strong></label>
-                            <textarea wire:model="description" class="form-control form-control-sm" rows="10" 
+                            <textarea wire:model="description" class="form-control form-control-sm" rows="8" 
                             placeholder="Descripción" id="description"></textarea>
                             <x-form.input-error for="description" />
                         </div>
@@ -17,7 +17,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="evidence"><strong>Evidencia</strong></label>
-                            <textarea wire:model="evidence" class="form-control form-control-sm" rows="10" 
+                            <textarea wire:model="evidence" class="form-control form-control-sm" rows="8" 
                             placeholder="Descripción" id="evidence"></textarea>
                             <x-form.input-error for="evidence" />
                         </div>
@@ -26,18 +26,18 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="consequence"><strong>Consecuecnia</strong></label>
-                            <textarea wire:model="consequence" class="form-control form-control-sm" rows="10" 
-                            placeholder="Descripción" id="consequence"></textarea>
-                            <x-form.input-error for="consequence" />
+                            <label for="requirement"><strong>Requisito Incumplido</strong></label>
+                            <textarea wire:model="requirement" class="form-control form-control-sm" rows="8" 
+                            placeholder="Descripción" id="requirement"></textarea>
+                            <x-form.input-error for="requirement" />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="requirement"><strong>Requisito Incumplido</strong></label>
-                            <textarea wire:model="requirement" class="form-control form-control-sm" rows="10" 
-                            placeholder="Descripción" id="requirement"></textarea>
-                            <x-form.input-error for="requirement" />
+                            <label for="consequence"><strong>Consecuecnia</strong></label>
+                            <textarea wire:model="consequence" class="form-control form-control-sm" rows="8" 
+                            placeholder="Descripción" id="consequence"></textarea>
+                            <x-form.input-error for="consequence" />
                         </div>
                     </div>
                 </div>

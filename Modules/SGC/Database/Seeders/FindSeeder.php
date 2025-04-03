@@ -3,6 +3,7 @@
 namespace Modules\SGC\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Modules\SGC\App\Models\Find;
 
 class FindSeeder extends Seeder
 {
@@ -11,6 +12,6 @@ class FindSeeder extends Seeder
      */
     public function run(): void
     {
-        // $this->call([]);
+        Find::factory()->count(30)->create();
     }
 }

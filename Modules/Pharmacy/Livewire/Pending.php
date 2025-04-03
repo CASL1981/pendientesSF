@@ -2,6 +2,7 @@
 
 namespace Modules\Pharmacy\Livewire;
 
+use App\Models\Classification;
 use App\Models\Destination;
 use App\Models\User;
 use App\Traits\CRUDLivewireTrait;
@@ -11,6 +12,7 @@ use Illuminate\View\View;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Modules\Pharmacy\App\Models\Pending as ModelsPending;
+use Livewire\Attributes\On;
 use Modules\Shopping\App\Models\Product;
 
 class Pending extends Component
@@ -19,11 +21,11 @@ class Pending extends Component
     use TableLivewire;
     use CRUDLivewireTrait;
 
-    public $type, $destination_id, $product_id, $quantity, $send_quantity, $reason, $duration, $EPS, $contracting_modality;
-    public $user_id, $invoicing_method, $manager, $order, $circular, $observations, $status;
+    public $type, $category, $destination, $reason, $duration, $EPS, $contracting_modality;
+    public $user_id, $invoicing_method, $manager, $observations, $status;
 
 
-    public $destinations, $products, $users;
+    public $destinations, $categories, $products, $users;
 
     public function hydrate(): void
     {
@@ -31,10 +33,11 @@ class Pending extends Component
 
         $this->messageModel = 'Pendiente creado';
 
-        $this->exportable ='App\Exports\PendingExport';
+        $this->exportable ='App\Exports\PendingsExport';
         $this->model = 'Modules\Pharmacy\App\Models\Pending';
 
-        $this->destinations = Destination::pluck('name', 'id')->toArray();
+        $this->destinations = Destination::pluck('name', 'costcenter')->toArray();
+        $this->categories = Classification::pluck('name', 'name')->toArray();
         $this->products = Product::pluck('description', 'id')->toArray();
         $this->users = User::pluck('name', 'id')->toArray();
     }
@@ -49,7 +52,7 @@ class Pending extends Component
         $pendings = new ModelsPending();
 
         $pendings = $pendings->QueryTable($this->keyWord, $this->sortField, $this->sortDirection)
-                    ->with(['destination', 'product', 'user'])->paginate(10);
+                    ->with('user')->paginate(20);
 
         return view('pharmacy::livewire.pending.view', compact('pendings'));
     }
@@ -58,19 +61,15 @@ class Pending extends Component
     {
         return [
             'type' => Rule::in(['Pedido', 'Requisición', 'Mensaje Interno']),
-            'destination_id' => 'required | exists:destinations,id',
-            'product_id' => 'required | exists:shopping_products,id',
-            'quantity' => 'required | numeric',
-            'send_quantity' => 'nullable | numeric',
+            'category' => 'required',
+            'destination' => 'required',
             'reason' => 'nullable',
             'duration' => 'nullable|min:3',
             'EPS' => 'nullable|min:3',
             'contracting_modality' => 'nullable|min:3',
             'invoicing_method' => 'nullable|min:3',
             'manager' => 'nullable | min:3',
-            'order' => 'nullable | numeric',
-            'circular' => 'nullable | min:3',
-            'observations' => 'nullable | min:3',
+            'observations' => 'nullable | min:3 | max:255',
         ];
     }
 
@@ -82,25 +81,31 @@ class Pending extends Component
     {
         can('pending update');
 
+        $status = ModelsPending::withTrashed()->where('id', $this->selected_id)->get('status')->toArray();
+
+        if($status[0]['status'] !== 'Activo')
+        {
+            $this->selectedModel = []; //limpiamos todos los item seleccionados
+            $this->selectAll = false;
+            return $this->dispatch('alert', ['type' => 'warning', 'message' => 'Solicitud no se encuentra activa']);
+        }
+
         $record = ModelsPending::findOrFail($this->selected_id);
 
         $this->type = $record->type;
-        $this->destination_id = $record->destination_id;
-        $this->product_id = $record->product_id;
-        $this->quantity = $record->quantity;
-        $this->send_quantity = $record->send_quantity;
+        $this->category = $record->category;
+        $this->destination = $record->destination;
         $this->reason = $record->reason;
         $this->duration = $record->duration;
         $this->EPS = $record->EPS;
         $this->contracting_modality = $record->contracting_modality;
         $this->invoicing_method = $record->invoicing_method;
         $this->manager = $record->manager;
-        $this->order = $record->order;
-        $this->circular = $record->circular;
         $this->observations = $record->observations;
 
         $this->show = true;
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -120,5 +125,51 @@ class Pending extends Component
         $this->resetInput();
     	$this->dispatch('alert', ['type' => 'success', 'message' => $this->messageModel . ' creada']);
 
+    }
+
+    public function detailPending(): mixed
+    {
+        can('pending create');
+
+        $status = ModelsPending::withTrashed()->where('id', $this->selected_id)->get('status')->toArray();
+
+        if($status[0]['status'] === 'Activo')
+        {
+            session()->put('pendingId', $this->selected_id);
+
+            return redirect()->route('pharmacy.detail.pending');
+        }
+
+        $this->selectedModel = []; //limpiamos todos los item seleccionados
+        $this->selectAll = false;
+        return $this->dispatch('alert', ['type' => 'warning', 'message' => 'Solicitud no se encuentra activa']);
+    }
+
+    #[On('toggleItem')] //escuchamos el evento emitido desde la tabla pendings
+    public function toggleItem():void
+    {
+        // can($this->permissionModel . ' toggle');
+
+        if (count($this->selectedModel)) {
+            //consultamos todos los status y consultamos los modelos de los item seleccionadoa
+            $status = $this->model::whereIn('id', $this->selectedModel)->get('status')->toArray();
+            $record = $this->model::whereIn('id', $this->selectedModel);
+
+            if($status[0]['status'] === 'Activo') {
+
+                $record->update([ 'status' => 'Terminado' ]); //actualizamos los modelos
+
+                $this->selectedModel = []; //limpiamos todos los item seleccionados
+                $this->selectAll = false;
+            } else {
+
+                $record->update([ 'status' => 'Activo' ]);
+                $this->selectedModel = [];
+                $this->selectAll = false;
+            }
+            $this->dispatch('alert', ['type' => 'success', 'message' => 'Itema actualizado']);
+        } else {
+            $this->dispatch('alert', ['type' => 'warning', 'message' => 'Selecciona un Item']);
+        }
     }
 }

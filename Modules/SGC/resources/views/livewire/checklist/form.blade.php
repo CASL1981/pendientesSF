@@ -5,13 +5,13 @@
     <x-slot name="content">
         <form>
             <div class="row">
-                <div class="form-group col-md-2">
+                <div class="form-group col-md-3">
                     <x-form.label for="cycle_id">Ciclo</x-form.label>
                     <x-select wire:model="cycle_id" class="form-control-sm" id="cycle_id"
-                    :options="$cycles"/><
+                    :options="$cycles"/>
                     <x-form.input-error for="cycle_id"/>
                 </div>
-                <div class="form-group col-md-2">
+                <div class="form-group col-md-3">
                     <x-form.label for="type">Tipo</x-form.label>
                     <x-form.input wire:model="type" maxlength="100" id="type"/>
                     <x-form.input-error for="type"/>
@@ -27,10 +27,22 @@
                     <x-form.input wire:model="process" maxlength="192" id="process"/>
                     <x-form.input-error for="process"/>
                 </div>
-                <div class="form-group col-md-2">
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
                     <x-form.label for="date_activity">Fecha Actividad</x-form.label>
                     <x-form.input wire:model.defer="date_activity" type="date" id="date_activity"/>
                     <x-form.input-error for="date_activity"/>
+                </div>
+                <div class="form-group col-md-4">
+                    <x-form.label for="prepared_by">Elaborado por</x-form.label>
+                    <x-form.input wire:model.defer="prepared_by" maxlength="192" id="prepared_by"/>
+                    <x-form.input-error for="prepared_by"/>
+                </div>
+                <div class="form-group col-md-4">
+                    <x-form.label for="accepted_by">Auditado/Contratista</x-form.label>
+                    <x-form.input wire:model.defer="accepted_by" maxlength="192" id="accepted_by"/>
+                    <x-form.input-error for="accepted_by"/>
                 </div>
             </div>
             <div class="row">
@@ -59,14 +71,9 @@
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
-                    <x-form.label for="prepared_by">Elaborado por</x-form.label>
-                    <x-form.input wire:model.defer="prepared_by" maxlength="192" id="prepared_by"/>
-                    <x-form.input-error for="prepared_by"/>
-                </div>
-                <div class="form-group col-md-6">
-                    <x-form.label for="accepted_by">Auditado/Contratista</x-form.label>
-                    <x-form.input wire:model.defer="accepted_by" maxlength="192" id="accepted_by"/>
-                    <x-form.input-error for="accepted_by"/>
+                    <x-form.label for="strength">Fortalezas</x-form.label>
+                    <textarea class="form-control" id="strength" rows="4" wire:model.defer="strength"></textarea>
+                    <x-form.input-error for="strength"/>
                 </div>
             </div>
         </form>

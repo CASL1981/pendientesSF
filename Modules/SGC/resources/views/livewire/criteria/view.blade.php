@@ -115,7 +115,7 @@
                                             {{-- {{ dd($item) }} --}}
                                             <tr>
                                                 <td class="p-1 text-wrap" style="width: 10px">{{ $key + 1 }}</td>
-                                                <td class="p-1 text-wrap" style="width: 200px;">{{ $item->evaluated }}</td>
+                                                <td class="p-1 text-wrap" style="width: 200px;">{{ Str::limit($item->evaluated, 200, '...') }}</td>
                                                 <td class="p-1 text-wrap" style="width: 200px;">{{ Str::limit($item->description, 200, '...') }}</td>
                                                 <td class="p-1 text-center" style="width: 10px;">{{ $item->findings }}</td>
                                                 <td class="p-1 text-wrap" style="width: 200px;">{{ Str::limit($item->observations, 200, '...') }}</td>
@@ -124,7 +124,7 @@
                                                     <button class="p-1 btn btn-icon btn-sm btn-primary" wire:click="edit({{ $item->id }})" title="Visualizar o ActualizarCriterio">
                                                         <svg fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-16" width="16" height="16" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.09756 12C8.09756 14.1333 9.8439 15.8691 12 15.8691C14.1463 15.8691 15.8927 14.1333 15.8927 12C15.8927 9.85697 14.1463 8.12121 12 8.12121C9.8439 8.12121 8.09756 9.85697 8.09756 12ZM17.7366 6.04606C19.4439 7.36485 20.8976 9.29455 21.9415 11.7091C22.0195 11.8933 22.0195 12.1067 21.9415 12.2812C19.8537 17.1103 16.1366 20 12 20H11.9902C7.86341 20 4.14634 17.1103 2.05854 12.2812C1.98049 12.1067 1.98049 11.8933 2.05854 11.7091C4.14634 6.88 7.86341 4 11.9902 4H12C14.0683 4 16.0293 4.71758 17.7366 6.04606ZM12.0012 14.4124C13.3378 14.4124 14.4304 13.3264 14.4304 11.9979C14.4304 10.6597 13.3378 9.57362 12.0012 9.57362C11.8841 9.57362 11.767 9.58332 11.6597 9.60272C11.6207 10.6694 10.7426 11.5227 9.65971 11.5227H9.61093C9.58166 11.6779 9.56215 11.833 9.56215 11.9979C9.56215 13.3264 10.6548 14.4124 12.0012 14.4124Z" fill="currentColor"></path></svg>
                                                     </button>
-                                                    <button class="p-1 btn btn-icon btn-sm btn-success" wire:click="addObservation({{ $item->id }})" title="Adicionar o Modificar NC">
+                                                    <button class="p-1 btn btn-icon btn-sm btn-success" wire:click="addObservation({{ $item->id }})" title="Adicionar o Modificar Observación">
                                                         <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
                                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M2 10.6699C2 5.88166 5.84034 2 10.5776 2C12.8526 2 15.0343 2.91344 16.6429 4.53936C18.2516 6.16529 19.1553 8.37052 19.1553 10.6699C19.1553 15.4582 15.3149 19.3399 10.5776 19.3399C5.84034 19.3399 2 15.4582 2 10.6699ZM19.0134 17.6543L21.568 19.7164H21.6124C22.1292 20.2388 22.1292 21.0858 21.6124 21.6082C21.0955 22.1306 20.2576 22.1306 19.7407 21.6082L17.6207 19.1785C17.4203 18.9766 17.3076 18.7024 17.3076 18.4164C17.3076 18.1304 17.4203 17.8562 17.6207 17.6543C18.0072 17.2704 18.6268 17.2704 19.0134 17.6543Z" fill="currentColor" />
                                                         </svg>
