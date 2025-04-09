@@ -64,6 +64,7 @@ class ApplyStockPendings extends Component
             'order' => 'nullable|min:3',
             'circular' => 'nullable|min:3',
             'observations' => 'nullable|min:3',
+            'status' => 'required',
         ];
     }
 
@@ -78,6 +79,7 @@ class ApplyStockPendings extends Component
         $record = DetailPending::findOrFail($this->selected_id);
 
         $this->product_id = $record->product_id;
+        $this->product_name = $record->product_name;
         $this->pending_id = $record->pending_id;
         $this->brand = $record->brand;
         $this->destination = $record->destination;
@@ -86,31 +88,9 @@ class ApplyStockPendings extends Component
         $this->order = $record->order;
         $this->circular = $record->circular;
         $this->observations = $record->observations;
+        $this->status = $record->status;
 
         $this->show = true;
-    }
-
-    public function update()
-
-    {
-        can($this->permissionModel . ' update');
-
-        $validate = $this->validate();
-
-        if ($this->selected_id) {
-
-    		$record = $this->model::find($this->selected_id);
-
-            $validate['status'] = $this->status;
-
-            $record->update($validate);
-
-            $this->closed();
-
-    		$this->dispatch('alert', ['type' => 'success', 'message' => $this->messageModel . ' actualizada']);
-
-        }
-
     }
 
     public function stock(): void

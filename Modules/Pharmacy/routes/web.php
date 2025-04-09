@@ -30,4 +30,7 @@ Route::group(['auth:sanctum', config('jetstream.auth_session'),'verified'], func
     // ruta para adicionar productos los pendientes
     Route::view('detailpending', 'pharmacy::livewire.detailpending.index')->name('pharmacy.detail.pending');
     Route::post('import/detailpending', [StockController::class, 'detailpending'])->name('pharmacy.detail.pending.import')->middleware('can_view:pending');
+
+    // ruta para adicionar productos agotados
+    Route::view('exhausted', 'pharmacy::livewire.exhausted.index')->name('pharmacy.exhausted')->middleware('can_view:exhausted');
 });

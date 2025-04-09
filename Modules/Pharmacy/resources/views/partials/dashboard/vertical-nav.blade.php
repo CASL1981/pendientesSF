@@ -132,9 +132,6 @@
         </a>
     </li>
     @endcan
-    @can('applystockpending read')
-        
-    @endcan
     <li class="nav-item">
         <a class="nav-link {{activeRoute(route('pharmacy.apply.stock.pending'))}}" href="{{ route('pharmacy.apply.stock.pending') }}" >
             <i class="icon">
@@ -218,55 +215,21 @@
     <li class="nav-item">
         <a class="nav-link {{activeRoute(route('pharmacy.stock'))}}" href="{{ route('pharmacy.stock') }}" >
             <i class="icon">
-                <svg fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-24" width="24" height="24" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.45 4.88017H16.52C20.21 4.88017 22.01 6.85017 22 10.8902V15.7602C22 19.6202 19.62 22.0002 15.75 22.0002H8.24C4.39 22.0002 2 19.6202 2 15.7502V8.24017C2 4.10017 3.84 2.00017 7.47 2.00017H9.05C9.981 1.99017 10.85 2.42017 11.42 3.15017L12.3 4.32017C12.58 4.67017 13 4.88017 13.45 4.88017ZM7.37 15.2902H16.63C17.04 15.2902 17.37 14.9502 17.37 14.5402C17.37 14.1202 17.04 13.7902 16.63 13.7902H7.37C6.95 13.7902 6.62 14.1202 6.62 14.5402C6.62 14.9502 6.95 15.2902 7.37 15.2902Z" fill="currentColor"></path></svg>
+                <svg fill="#000000" class="icon-24" width="24" height="24" viewBox="0 0 64 64" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="ICON"> <path d="M59,43l-54,0l0,-8c0,-0.552 -0.448,-1 -1,-1c-0.552,0 -1,0.448 -1,1l0,13c-0,0.796 0.316,1.559 0.879,2.121c0.562,0.563 1.325,0.879 2.121,0.879l4,0c0.552,0 1,-0.448 1,-1c0,-0.552 -0.448,-1 -1,-1l-4,0c-0.265,-0 -0.52,-0.105 -0.707,-0.293c-0.188,-0.187 -0.293,-0.442 -0.293,-0.707l0,-3l54,0l0,3c0,0.265 -0.105,0.52 -0.293,0.707c-0.187,0.188 -0.442,0.293 -0.707,0.293l-21.642,-0l-8.715,-0l-13.643,0c-0.552,0 -1,0.448 -1,1c0,0.552 0.448,1 1,1l12.606,0c-0.16,2.682 -0.855,6.147 -3.417,8l-1.689,0c-0.552,0 -1,0.448 -1,1c0,0.552 0.448,1 1,1l21,0c0.552,0 1,-0.448 1,-1c0,-0.552 -0.448,-1 -1,-1l-1.689,0c-2.562,-1.854 -3.257,-5.318 -3.417,-8l20.606,0c0.796,-0 1.559,-0.316 2.121,-0.879c0.563,-0.562 0.879,-1.325 0.879,-2.121c0,-6.028 0,-23.972 0,-30c0,-0.796 -0.316,-1.559 -0.879,-2.121c-0.562,-0.563 -1.325,-0.879 -2.121,-0.879l-10,0c-0.552,0 -1,0.448 -1,1c0,0.552 0.448,1 1,1l10,0c0.265,0 0.52,0.105 0.707,0.293c0.188,0.187 0.293,0.442 0.293,0.707l0,25Zm-23.606,8l-6.788,0c-0.155,2.531 -0.785,5.68 -2.585,8l11.958,0c-1.8,-2.32 -2.43,-5.47 -2.585,-8Zm-7.394,-22l-0,10c0,0.552 0.448,1 1,1l6,0c0.552,0 1,-0.448 1,-1l-0,-10c-0,-0 2,-0 2,-0c0.382,0 0.73,-0.217 0.898,-0.56c0.168,-0.343 0.126,-0.751 -0.108,-1.053l-6,-7.737c-0.189,-0.244 -0.481,-0.387 -0.79,-0.387c-0.309,0 -0.601,0.143 -0.79,0.387l-6,7.737c-0.234,0.302 -0.276,0.71 -0.108,1.053c0.168,0.343 0.516,0.56 0.898,0.56l2,-0Zm-21,7l-0,2c0,0.552 0.448,1 1,1c0.552,-0 1,-0.448 1,-1l-0,-2c0,-0.552 -0.448,-1 -1,-1c-0.552,-0 -1,0.448 -1,1Zm23,-8c0,-0.552 -0.448,-1 -1,-1l-0.959,-0c-0,-0 3.959,-5.105 3.959,-5.105c0,-0 3.959,5.105 3.959,5.105c0,-0 -0.959,-0 -0.959,-0c-0.552,0 -1,0.448 -1,1l-0,10c-0,0 -4,0 -4,0c-0,0 -0,-10 -0,-10Zm6.364,-25l-14.364,-0c-1.657,0 -3,1.343 -3,3l0,25c0,1.657 1.343,3 3,3l4,-0c0.552,-0 1,-0.448 1,-1c-0,-0.552 -0.448,-1 -1,-1l-4,0c-0.552,-0 -1,-0.448 -1,-1c0,-0 0,-25 0,-25c0,-0.552 0.448,-1 1,-1l13,0l0,7c0,0.552 0.448,1 1,1l7,-0l0,18c0,0.552 -0.448,1 -1,1c-0,-0 -4,0 -4,0c-0.552,-0 -1,0.448 -1,1c-0,0.552 0.448,1 1,1l4,-0c1.657,-0 3,-1.343 3,-3c0,-5.423 0,-20 0,-20c0,-0.28 -0.118,-0.548 -0.324,-0.737l-7.637,-7c-0.184,-0.169 -0.425,-0.263 -0.675,-0.263Zm-27.364,30l-0,-13c0,-0.552 -0.448,-1 -1,-1c-0.552,-0 -1,0.448 -1,1l-0,13c0,0.552 0.448,1 1,1c0.552,-0 1,-0.448 1,-1Zm7,-18l-10,0c-0.796,0 -1.559,0.316 -2.121,0.879c-0.563,0.562 -0.879,1.325 -0.879,2.121c0,2.509 0,8.581 0,13.5c0,0.552 0.448,1 1,1c0.552,0 1,-0.448 1,-1l0,-13.5c-0,-0.265 0.105,-0.52 0.293,-0.707c0.187,-0.188 0.442,-0.293 0.707,-0.293c0,0 10,0 10,0c0.552,0 1,-0.448 1,-1c0,-0.552 -0.448,-1 -1,-1Zm10.947,3.132l10.106,-0c0.552,-0 1,-0.449 1,-1c-0,-0.552 -0.448,-1 -1,-1l-10.106,-0c-0.552,-0 -1,0.448 -1,1c0,0.551 0.448,1 1,1Zm10.053,-7.132l5.52,-0l-5.52,-5.06l-0,5.06Z"></path> </g> </g></svg>
             </i>
             <span class="item-name">Cargar Existencias</span>
         </a>
     </li>
-    {{-- <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-widget" role="button" aria-expanded="false" aria-controls="sidebar-widget">
-            <i class="icon">
-                <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path opacity="0.4" d="M21.25 13.4764C20.429 13.4764 19.761 12.8145 19.761 12.001C19.761 11.1865 20.429 10.5246 21.25 10.5246C21.449 10.5246 21.64 10.4463 21.78 10.3076C21.921 10.1679 22 9.97864 22 9.78146L21.999 7.10415C21.999 4.84102 20.14 3 17.856 3H6.144C3.86 3 2.001 4.84102 2.001 7.10415L2 9.86766C2 10.0648 2.079 10.2541 2.22 10.3938C2.36 10.5325 2.551 10.6108 2.75 10.6108C3.599 10.6108 4.239 11.2083 4.239 12.001C4.239 12.8145 3.571 13.4764 2.75 13.4764C2.336 13.4764 2 13.8093 2 14.2195V16.8949C2 19.158 3.858 21 6.143 21H17.857C20.142 21 22 19.158 22 16.8949V14.2195C22 13.8093 21.664 13.4764 21.25 13.4764Z" fill="currentColor"></path>
-                    <path d="M15.4303 11.5887L14.2513 12.7367L14.5303 14.3597C14.5783 14.6407 14.4653 14.9177 14.2343 15.0837C14.0053 15.2517 13.7063 15.2727 13.4543 15.1387L11.9993 14.3737L10.5413 15.1397C10.4333 15.1967 10.3153 15.2267 10.1983 15.2267C10.0453 15.2267 9.89434 15.1787 9.76434 15.0847C9.53434 14.9177 9.42134 14.6407 9.46934 14.3597L9.74734 12.7367L8.56834 11.5887C8.36434 11.3907 8.29334 11.0997 8.38134 10.8287C8.47034 10.5587 8.70034 10.3667 8.98134 10.3267L10.6073 10.0897L11.3363 8.61268C11.4633 8.35868 11.7173 8.20068 11.9993 8.20068H12.0013C12.2843 8.20168 12.5383 8.35968 12.6633 8.61368L13.3923 10.0897L15.0213 10.3277C15.2993 10.3667 15.5293 10.5587 15.6173 10.8287C15.7063 11.0997 15.6353 11.3907 15.4303 11.5887Z" fill="currentColor"></path>
-                </svg>
-            </i>
-            <span class="item-name">widget</span>
-            <i class="right-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-            </i>
-        </a>
-        <ul class="sub-nav collapse" id="sidebar-widget" data-bs-parent="#sidebar">
-            <li class="nav-item">
-                <a class="nav-link {{activeRoute(route('widget.widgetbasic'))}}" href="#">
-                    <i class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
-                            <g>
-                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
-                            </g>
-                        </svg>
-                    </i>
-                    <i class="sidenav-mini-icon"> L </i>
-                    <span class="item-name">Link 1</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{activeRoute(route('widget.widgetchart'))}}" href="#">
-                    <i class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
-                            <g>
-                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
-                            </g>
-                        </svg>
-                    </i>
-                    <i class="sidenav-mini-icon"> L </i>
-                    <span class="item-name">Link 2</span>
-                </a>
-            </li>
-        </ul>
-    </li> --}}
+    @can('exhausted read')
+        <li class="nav-item">
+            <a class="nav-link {{activeRoute(route('pharmacy.exhausted'))}}" href="{{ route('pharmacy.exhausted') }}" >
+                <i class="icon">
+                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-24" width="24" height="24" viewBox="0 0 24 24"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="medical-receipt-3" transform="translate(-2 -2)"> <rect id="secondary" fill="#2ca9bc" width="10.66" height="5" rx="2.5" transform="translate(10.968 18.501) rotate(-45)"></rect> <path id="primary" d="M7,8h6M7,12h4m5.73.73a2.52,2.52,0,0,1,3.54,0h0a2.52,2.52,0,0,1,0,3.54l-4,4a2.52,2.52,0,0,1-3.54,0h0a2.52,2.52,0,0,1,0-3.54ZM18.2,18.2l-3.4-3.4" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path> <path id="primary-2" data-name="primary" d="M8,21H4a1,1,0,0,1-1-1V4A1,1,0,0,1,4,3H16a1,1,0,0,1,1,1V8" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path> </g> </g></svg>
+                </i>
+                <span class="item-name">Agotados</span>
+            </a>
+        </li>
+    @endcan
     <li><hr class="hr-horizontal"></li>
     @include('partials.dashboard.menu-modulos')
 </ul>

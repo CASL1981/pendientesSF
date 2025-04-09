@@ -17,7 +17,7 @@ class DetailPending extends Model
     /**
      * The attributes that are mass assignable.
      */
-    protected $fillable = ['product_id', 'pending_id', 'product_name', 'brand', 'destination', 'quantity', 'send_quantity', 'order', 'circular', 'status'];
+    protected $fillable = ['product_id', 'pending_id', 'product_name', 'brand', 'destination', 'quantity', 'send_quantity', 'order', 'circular', 'observations', 'status'];
 
     protected static function newFactory(): DetailPendingFactory
     {
@@ -31,8 +31,8 @@ class DetailPending extends Model
 
     public function QueryTable($keyWord = null, $sortField, $sortDirection): mixed
     {
-        return $this->select('id','product_id', 'pending_id', 'product_name', 'brand', 'destination', 'quantity', 
-        'send_quantity', 'order', 'circular', 'status', 'created_at')
+        return $this->select('id','product_id', 'pending_id', 'product_name', 'brand', 'destination', 'quantity',
+        'send_quantity', 'order', 'circular', 'observations','status', 'created_at')
         ->search('product_name', $keyWord)
         ->search('product_id', $keyWord)
         ->search('pending_id', $keyWord)

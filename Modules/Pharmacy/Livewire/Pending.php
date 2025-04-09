@@ -148,7 +148,7 @@ class Pending extends Component
     #[On('toggleItem')] //escuchamos el evento emitido desde la tabla pendings
     public function toggleItem():void
     {
-        // can($this->permissionModel . ' toggle');
+        can($this->permissionModel . ' toggle');
 
         if (count($this->selectedModel)) {
             //consultamos todos los status y consultamos los modelos de los item seleccionadoa

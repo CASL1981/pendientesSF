@@ -3,6 +3,7 @@
 namespace Modules\Pharmacy\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Modules\Pharmacy\App\Models\Exhausted;
 
 class PharmacyDatabaseSeeder extends Seeder
 {
@@ -14,5 +15,6 @@ class PharmacyDatabaseSeeder extends Seeder
         $this->call(PendingTableSeeder::class);
         $this->call(StockSeeder::class);
         $this->call(DetailPendingSeeder::class);
+        $this->call(ExhaustedSeeder::class);
     }
 }
